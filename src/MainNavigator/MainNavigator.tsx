@@ -1,10 +1,10 @@
 import React, { FC, useEffect, useRef } from "react";
 import { NavigationContainer, NavigationContainerRef } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
-import { MainStackList, Routes } from "./types/navigationTypes.d";
+import { MainStackList, Routes } from "./types";
 import { useStore } from "../store";
 import { LoginScreen } from "../screens/public/Login/Login.screen";
-import { ConfirmedCasesScreen } from "../screens/private/ConfirmedCases/ConfirmedCases.Screen";
+import { ConfirmedCasesScreen } from "../screens/private/ConfirmedCases/ConfirmedCases.screen";
 import { CountriesScreen } from "../screens/private/Countries/Countries.screen";
 import { useLogin } from "../screens/public/Login/hooks/useLogin";
 

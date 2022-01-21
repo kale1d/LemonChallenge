@@ -2,9 +2,9 @@ import React, { FC, useCallback, useEffect, useState } from "react";
 import { VirtualizedList } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { fetchCountries, fetchCountryData } from "../../../Api/Api";
-import { Country } from "../../../Api/types/apiTypes.d";
+import { Country } from "../../../Api/types/types";
 import { ListItem } from "../../../components/ListItem/ListItem.component";
-import { MainNavigationProp, Routes } from "../../../MainNavigator/types/navigationTypes.d";
+import { MainNavigationProp, Routes } from "../../../MainNavigator/types";
 import { useStore } from "../../../store";
 import { Types } from "../../../store/types";
 
@@ -45,6 +45,7 @@ export const CountriesScreen:FC<Props> = ({navigation}) => {
         renderItem={({ item }: {item: Country}) => <ListItem title={item.Country} subtitle={item.ISO2} onPress={()=> handleOnPress(item.Slug)}/>}
         getItemCount={data => data?.length || 0 }
         getItem={(data, index)=> data[index]}
+        keyExtractor={(item, index) => item?.ISO2 || index.toString()}
       />
     </SafeAreaView>
   );

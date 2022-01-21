@@ -1,4 +1,4 @@
-import { Country, CountryCovidInfo } from "./types/apiTypes.d";
+import { Country, CountryCovidInfo } from "./types/types";
 
 const API_URL = "https://api.covid19api.com/";
 

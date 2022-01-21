@@ -1,16 +1,16 @@
-import React, { FC, useEffect } from "react";
-import { Button, Text, View } from "react-native";
+import React, { FC } from "react";
+import { Button, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-
 import { useLogin } from "./hooks/useLogin";
+import { loginStyles as styles } from "./Login.styles";
 
-export const LoginScreen: FC<any> = () => {
+export const LoginScreen: FC = () => {
   const { signIn } = useLogin();
- 
+  const { container } = styles;
+
   return (
-    <SafeAreaView>
-      <View>
-        <Text>holi</Text>
+    <SafeAreaView style={{ flex: 1 }}>
+      <View style={container}>
         <Button title={"Sign in with Google"} onPress={() => signIn()} />
       </View>
     </SafeAreaView>

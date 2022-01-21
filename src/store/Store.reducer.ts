@@ -1,4 +1,4 @@
-import { ActionProps, ICountryInfo, IStoreState, Types } from "./types";
+import { ActionProps, IStoreState, Types } from "./types";
 
 
 export const initialState: IStoreState = {token: null, countryInfo: []};
