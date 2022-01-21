@@ -1,4 +1,4 @@
-package com.covid19cases;
+package com.lemoncash.challenge;
 
 import com.facebook.react.ReactActivity;
 import android.os.Bundle;

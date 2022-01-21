@@ -2,3 +2,8 @@ node_modules
 .vscode
 .DS_STORE
 /ios/Pods
+ios/Podfile.lock
+
+build/
+.gradle
+android/app/_BUCK
