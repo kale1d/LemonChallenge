@@ -17,7 +17,6 @@ export const ConfirmedCasesScreen: FC = () => {
 const {dispatch} = useStore();
 
   const logOut = () => {
-    console.log(AsyncStorage.getItem("token"));
     dispatch({type: Types.setToken, payload: {token: null}})
     AsyncStorage.removeItem("token");
   }

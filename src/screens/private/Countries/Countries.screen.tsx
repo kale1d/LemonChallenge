@@ -25,7 +25,6 @@ export const CountriesScreen:FC<Props> = ({navigation}) => {
   }, [setCountries]);
 
   const handleOnPress = async (slug: string) => {
-      console.log(slug);
       try {
           const info  = await fetchCountryData(slug);
           if(info) {
