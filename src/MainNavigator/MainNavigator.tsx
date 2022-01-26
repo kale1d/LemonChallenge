@@ -32,7 +32,7 @@ export const MainNavigator: FC = () => {
           ) : (
             <>
               <Stack.Screen name={Routes.Countries} component={CountriesScreen} />
-              <Stack.Screen name={Routes.Home} component={ConfirmedCasesScreen} />
+              <Stack.Screen name={Routes.ConfirmedCases} component={ConfirmedCasesScreen} />
             </>
           )}
         </Stack.Navigator>

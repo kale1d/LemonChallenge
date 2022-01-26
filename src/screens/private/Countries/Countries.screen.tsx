@@ -36,7 +36,7 @@ export const CountriesScreen:FC<Props> = ({navigation}) => {
       } catch(e) {
 
       } finally {
-          navigation.navigate(Routes.Home);
+          navigation.navigate(Routes.ConfirmedCases);
       }
   }
 

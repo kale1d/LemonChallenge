@@ -2,13 +2,13 @@ import { StackNavigationProp } from "@react-navigation/stack";
 
 export enum Routes {
   Login = "Login",
-  Home = "Home",
+  ConfirmedCases = "ConfirmedCases",
   Countries = "Countries",
 }
 
 export type MainStackList = {
   [Routes.Login]: undefined;
-  [Routes.Home]: undefined;
+  [Routes.ConfirmedCases]: undefined;
   [Routes.Countries]: undefined;
 };
 
