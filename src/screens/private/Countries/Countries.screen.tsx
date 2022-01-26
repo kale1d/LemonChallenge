@@ -3,10 +3,10 @@ import { VirtualizedList } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { fetchCountries, fetchCountryData } from "../../../Api/Api";
 import { Country } from "../../../Api/types/types";
-import { ListItem } from "../../../components/ListItem/ListItem.component";
+import { Types } from "../../../store/types";
 import { MainNavigationProp, Routes } from "../../../MainNavigator/types";
 import { useStore } from "../../../store";
-import { Types } from "../../../store/types";
+import { ListItem } from "../../../components/ListItem/ListItem.component";
 
 type Props = {
     navigation: MainNavigationProp<Routes.Countries>;
@@ -15,15 +15,17 @@ export const CountriesScreen:FC<Props> = ({navigation}) => {
 
   const [countries, setCountries] = useState<Country[] | void | null>(null);
   const {dispatch} = useStore();
-  useEffect(() => {
-    fetchData();
-  }, []);
 
   const fetchData = useCallback(async () => {
     const info = await fetchCountries();
     setCountries(info);
   }, [setCountries]);
 
+  useEffect(() => {
+    fetchData();
+  }, [fetchData]);
+
+  
   const handleOnPress = async (slug: string) => {
       try {
           const info  = await fetchCountryData(slug);
@@ -34,9 +36,10 @@ export const CountriesScreen:FC<Props> = ({navigation}) => {
       } catch(e) {
 
       } finally {
-          await navigation.navigate(Routes.Home);
+          navigation.navigate(Routes.Home);
       }
   }
+
   return (
     <SafeAreaView>
       <VirtualizedList

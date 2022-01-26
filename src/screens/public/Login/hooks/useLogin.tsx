@@ -4,8 +4,7 @@ import { useStore } from "../../../../store";
 import { Types } from "../../../../store/types";
 
 export const useLogin = () => {
-  const { state, dispatch } = useStore();
-  const {token} = state;
+  const { dispatch } = useStore();
 
   const googleSignInConfig: () => void = () => {
     GoogleSignin.configure({
@@ -53,7 +52,12 @@ export const useLogin = () => {
       });
       return token;
     }
+  };
 
-  }
-  return { googleSignInConfig, signIn, fetchUserToken };
+  const logOut = () => {
+    dispatch({ type: Types.setToken, payload: { token: null } });
+    AsyncStorage.removeItem("token");
+  };
+
+  return { googleSignInConfig, signIn, fetchUserToken, logOut };
 };

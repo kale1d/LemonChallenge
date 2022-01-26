@@ -11,7 +11,7 @@ export const LoginScreen: FC = () => {
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <View style={container}>
-        <Button title={"Sign in with Google"} onPress={() => signIn()} />
+        <Button title="Sign in with Google" onPress={() => signIn()} />
       </View>
     </SafeAreaView>
   );

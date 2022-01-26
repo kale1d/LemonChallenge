@@ -1,8 +1,6 @@
 import { useState } from "react";
-import AsyncStorage from "@react-native-async-storage/async-storage";
 import { CountryCovidInfo } from "../../../../Api/types/types";
 import { useStore } from "../../../../store";
-import { Types } from "../../../../store/types";
 
 export const useConfirmedCases = () => {
   const { state, dispatch } = useStore();
@@ -70,10 +68,6 @@ export const useConfirmedCases = () => {
     }
   };
 
-  const logOut = () => {
-    dispatch({ type: Types.setToken, payload: { token: null } });
-    AsyncStorage.removeItem("token");
-  };
 
-  return { covidCases, sortDates, sortCases, logOut };
+  return { covidCases, sortDates, sortCases };
 };

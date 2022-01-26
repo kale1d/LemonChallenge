@@ -18,7 +18,7 @@ export const MainNavigator: FC = () => {
   
   useEffect(()=> {
     fetchUserToken();
-  }, []);
+  }, [fetchUserToken]);
 
   const navigationRef: React.RefObject<NavigationContainerRef> = useRef(null)
 

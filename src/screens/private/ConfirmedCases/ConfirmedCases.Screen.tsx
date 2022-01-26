@@ -3,11 +3,13 @@ import { Button, View, VirtualizedList } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { ICountryInfo } from "../../../store/types";
 import { useConfirmedCases } from "./hooks/useConfirmedCases";
+import { useLogin } from "../../public/Login/hooks/useLogin";
 import { ListItem } from "../../../components/ListItem/ListItem.component";
 import { confirmedCasesStyles as styles } from "./ConfirmedCases.styles";
 
 export const ConfirmedCasesScreen: FC = () => {
-  const { covidCases, sortCases, sortDates, logOut } = useConfirmedCases();
+  const { covidCases, sortCases, sortDates } = useConfirmedCases();
+  const {logOut} = useLogin();
   const { container, buttonsContainer, listContainer } = styles;
 
   return (
